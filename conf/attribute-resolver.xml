@@ -82,6 +82,12 @@
         <resolver:AttributeEncoder xsi:type="enc:SAML1String" name="urn:mace:dir:attribute-def:sAMAccountName" />
         <resolver:AttributeEncoder xsi:type="enc:SAML2String" name="urn:oid:2.5.4.44" friendlyName="sAMAccountName" />
     </resolver:AttributeDefinition>
+    
+    <resolver:AttributeDefinition xsi:type="ad:Simple" id="roles" sourceAttributeID="memberOf">
+        <resolver:Dependency ref="myLDAP" />
+        <resolver:AttributeEncoder xsi:type="enc:SAML1String" name="urn:mace:dir:attribute-def:memberOf" />
+        <resolver:AttributeEncoder xsi:type="enc:SAML2String" name="urn:oid:2.5.4.44" friendlyName="memberOf" />
+    </resolver:AttributeDefinition>
 
 <!--
     <resolver:AttributeDefinition xsi:type="ad:Simple" id="locality" sourceAttributeID="l">
@@ -197,13 +203,13 @@
     -->
 
     <!-- Schema: eduPerson attributes -->
-    <!--
+    
     <resolver:AttributeDefinition xsi:type="ad:Simple" id="eduPersonAffiliation" sourceAttributeID="eduPersonAffiliation">
         <resolver:Dependency ref="myLDAP" />
         <resolver:AttributeEncoder xsi:type="enc:SAML1String" name="urn:mace:dir:attribute-def:eduPersonAffiliation" />
         <resolver:AttributeEncoder xsi:type="enc:SAML2String" name="urn:oid:1.3.6.1.4.1.5923.1.1.1.1" friendlyName="eduPersonAffiliation" />
     </resolver:AttributeDefinition>
-
+<!--
     <resolver:AttributeDefinition xsi:type="ad:Simple" id="eduPersonEntitlement" sourceAttributeID="eduPersonEntitlement">
         <resolver:Dependency ref="myLDAP" />
         <resolver:AttributeEncoder xsi:type="enc:SAML1String" name="urn:mace:dir:attribute-def:eduPersonEntitlement" />
@@ -321,10 +327,10 @@
     <!-- Example LDAP Connector -->
     
     <resolver:DataConnector id="myLDAP" xsi:type="dc:LDAPDirectory"
-        ldapURL="ldap://ec2-107-21-164-123.compute-1.amazonaws.com:3268" 
+        ldapURL="ldap://ec2-54-242-97-219.compute-1.amazonaws.com:3268" 
         baseDN="cn=Users,dc=fidelis-test,dc=com" 
         principal="cn=Administrator,cn=Users,dc=fidelis-test,dc=com"
-        principalCredential="fm6oXP8WNX">
+        principalCredential="devdas24@">
         <dc:FilterTemplate>
             <![CDATA[
                 (sAMAccountName=$requestContext.principalName)

@@ -36,7 +36,15 @@
         <afp:AttributeRule attributeID="email">
             <afp:PermitValueRule xsi:type="basic:ANY" />
         </afp:AttributeRule>
-
+        
+        <afp:AttributeRule attributeID="eduPersonAffiliation">
+            <afp:PermitValueRule xsi:type="basic:ANY" />
+        </afp:AttributeRule>
+        
+        <afp:AttributeRule attributeID="roles">
+            <afp:PermitValueRule xsi:type="basic:ANY" />
+        </afp:AttributeRule>
+        
     </afp:AttributeFilterPolicy>
 
 
