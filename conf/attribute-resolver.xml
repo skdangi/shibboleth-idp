@@ -327,10 +327,10 @@
     <!-- Example LDAP Connector -->
     
     <resolver:DataConnector id="myLDAP" xsi:type="dc:LDAPDirectory"
-        ldapURL="ldap://ec2-54-242-97-219.compute-1.amazonaws.com:3268" 
+        ldapURL="ldap://ec2-23-20-124-73.compute-1.amazonaws.com:3268" 
         baseDN="cn=Users,dc=fidelis-test,dc=com" 
         principal="cn=Administrator,cn=Users,dc=fidelis-test,dc=com"
-        principalCredential="devdas24@">
+        principalCredential="devdas26@">
         <dc:FilterTemplate>
             <![CDATA[
                 (sAMAccountName=$requestContext.principalName)

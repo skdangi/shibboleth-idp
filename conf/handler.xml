@@ -97,7 +97,7 @@
     <!--  Username/password login handler -->
     
     <ph:LoginHandler xsi:type="ph:UsernamePassword" 
-                  jaasConfigurationLocation="file://D:\shibboleth-idp/conf/login.config">
+                  jaasConfigurationLocation="file:///D:/shibboleth-idp/conf/login.config">
         <ph:AuthenticationMethod>urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</ph:AuthenticationMethod>
     </ph:LoginHandler>
     
